@@ -1,11 +1,9 @@
-import re
-
-def solution(my_string):
-    rexp = re.compile("")
+def solution(balls, share):
+    answer = 0
     return answer
 
 if __name__ == "__main__":
-    print(solution("aAb1B2cC34oOp"))
-    print(solution("1a2b3c4d123Z"))
+    print(solution(3, 2))
+    print(solution(5, 3))
 
 

@@ -14,5 +14,55 @@ def sys_module():
     # 파이썬은 모듈 검색할 때, sys.path에 등록된 디렉토리를 대상으로 검색
     print("모듈 검색 경로: ", sys.path)
     # 찾는 모듈이 sys.path 에 없을 때
+    # sys.path.append("추가할 모듈 경로")
+
+def regexp_ex():
+    """
+    정규표현식 예제
+    """
+    import re
+
+    namecard = """
+    Email: hong@hwalbin.org
+    Phone: 010-1234-5678
+
+    Email: gildong@dooly.net
+    Phone: 010-4352-6435
+
+    Email: qwerty@example.com
+    Phone: 010-6342-5634
+    """
+    emaillist = re.findall(r"\w+[\w\.]*@\w+[\w\.]\.[a-z+]+", namecard)
+    print(emaillist)
+
+    phonelist = re.findall(r"[0-9]{3}-[0-9]{4}-[0-9]{4}",namecard)
+    print(phonelist)
+
+def random_ex():
+    import random
+    
+    random.seed(42) # 난수 계산을 위한 기초 값
+
+    # 0 ~ 1 난수
+    print(random.random())  # 0 ~ 1의 난수
+    print(random.randint(1, 6)) # 1 ~ 6사이 정수 난수
+    print(random.randrange(101)) # 0 ~ 100 사이의 난수
+    print(random.randrange(1, 101, 3)) # 0 ~ 100 사이의 난수 중에서 3 간격으로 난수
+
+    # 순차형에 무작위성을 추가하는 부가 기능들
+    seqvar = ["짬뽕", "짜장면", "짬짜면", "마라탕"]
+    print("seqvar: ", seqvar)
+    random.shuffle(seqvar)
+    print("shuffle:", seqvar)
+    print(random.choice(seqvar))
+
+    # 샘플링
+    for i in range(5):
+        print(random.sample(range(1, 101), 10))
+
 if __name__ == "__main__":
     sys_module()
+    # regexp_ex()
+    # random_ex() 
+
+
