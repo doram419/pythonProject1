@@ -10,5 +10,11 @@ def bound_instance_method():
 
     print(p.getX(), p.getY(), sep=",")
 
+def unbound_instance_method():
+    """
+    Unbound method:
+    클래스 메서드에 인스턴스 참조주소를 전달 우회 접근법
+    """
+
 if __name__ == "__main__":
     bound_instance_method()
